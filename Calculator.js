@@ -1,21 +1,22 @@
+//listen on the button panel 
+//listen on the display
 let ButtonPanel = document.getElementById('ButtonPanel');
 let displayVal = document.getElementById("Display");
 
-
+//functions that add, subtract, multiply divide, and operate
 let add = (a,b) => (a + b);
 let subtract = (a,b) => (a - b);
 let multiply = (a,b) => (a * b);
 let divide = (a,b) => (a / b);
 let operate = (operator, a, b ) => (operator(a,b));
-let runningVal;
 
 let memory = [];
 
-function clearScreen(){ displayVal.innerHTML = "" };
+function clearScreen(){ displayVal.textContent = "" };
 function clearMemory(){ memory = [] };
-function commitLast(){ memory.push(displayVal.innerHTML) };
+function commitLast(){ memory.push(displayVal.textContent) };
 function checkLastPress(){
-    //if the last entry in memory is not a number, exit
+    //if you just pressed an operation and last entry in memory is not a number do nothing 
 }
 function calculate (){
     //loop over the memory array using operate
@@ -26,7 +27,7 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
     let buttonPressed = btn.target.id;
 
     if (buttonPressed >= 0) {
-    displayVal.innerHTML = displayVal.innerHTML + buttonPressed
+    displayVal.textContent = displayVal.textContent + buttonPressed
     };
     
     if (buttonPressed == "C") {
@@ -38,6 +39,7 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
         clearMemory()
     };
 
+    //use this as model for all other operations once working
     if (buttonPressed == "+") {
         checkLastPress();
         commitLast()
@@ -49,6 +51,8 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
         commitLast();
         clearScreen();
         calculate()
+
+        console.log(memory);
     };
 
 });
@@ -62,7 +66,7 @@ console.log();
 
 
     // if (buttonPressed == "+"){
-    //     numMemory.push(displayVal.innerHTML);
+    //     numMemory.push(displayVal.textContent);
     //     clearScreen();
     //     }
 
@@ -74,7 +78,7 @@ console.log();
 
         // if (buttonPressed == "+") {
     //         memory.push(
-    //             displayVal.innerHTML,
+    //             displayVal.textContent,
     //             add());
     //     clearScreen();
 
