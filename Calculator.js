@@ -16,7 +16,7 @@ function clearScreen(){ displayVal.textContent = "" };
 function clearMemory(){ memory = [] };
 function commitLast(){ memory.push(displayVal.textContent) };
 function checkLastPress(){
-    //if you just pressed an operation and last entry in memory is not a number do nothing 
+    //if you just pressed an operation and last entry in memory is not a number, do nothing 
 }
 function calculate (){
     //loop over the memory array using operate
