@@ -12,17 +12,16 @@ let operate = (operator, a, b ) => (operator(a,b));
 
 let memory = [];
 
-function clearScreen(){ displayVal.textContent = "" };
+function clearScreen(){ displayVal.textContent = null};
 function clearMemory(){ memory = [] };
 function commitLast(){ memory.push(displayVal.textContent) };
-function checkLastPress(){
-    //if you just pressed an operation and last entry in memory is not a number, do nothing 
-}
-function calculate (){
+function checkLastPress(){ return displayVal.textContent };
+function calculate(arr){return operate(arr[1], parseInt(arr[0]), parseInt(arr[2]))};
+
     //loop over the memory array using operate
     //operate using memory[0] and memory[2] with operator at memory[1]
     //repeat untill memory.length == 1
-}
+
 let pressButton = ButtonPanel.addEventListener('click', function(btn) {
     let buttonPressed = btn.target.id;
 
@@ -47,19 +46,25 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
         clearScreen();
     };
 
+    if (buttonPressed == "X") {
+        checkLastPress();
+        commitLast()
+        memory.push(multiply)
+        clearScreen();
+    };
+
     if(buttonPressed == "="){
         commitLast();
         clearScreen();
-        calculate()
+        console.log(  calculate(memory) );
+      //  console.log(operate(memory[1](memory[0], memory[2])));
 
-        console.log(memory);
     };
 
 });
 
+console.log(operate(add, 34, 2)); // calling the function directly seems to actually add
 
-
-console.log();
 
 
 
