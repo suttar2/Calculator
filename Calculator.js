@@ -1,7 +1,7 @@
 //listen on the button panel 
 //listen on the display
 let ButtonPanel = document.getElementById('ButtonPanel');
-let displayVal = document.getElementById("Display");
+let displayVal = document.getElementById("NumDisplay");
 
 //functions that add, subtract, multiply divide, and operate
 let add = (a,b) => (a + b);
@@ -56,14 +56,14 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
     if(buttonPressed == "="){
         commitLast();
         clearScreen();
-        console.log(  calculate(memory) );
-      //  console.log(operate(memory[1](memory[0], memory[2])));
-
+        displayVal.textContent = calculate(memory);
+        console.log(memory)
     };
 
 });
 
-console.log(operate(add, 34, 2)); // calling the function directly seems to actually add
+console.log(memory);
+//console.log(operate(add, 34, 2)); // calling the function directly seems to actually add
 
 
 

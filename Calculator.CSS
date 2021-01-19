@@ -1,6 +1,123 @@
-#Calculator {
-    background-color:teal;
-    height:300px;
-    width:400px;
+@font-face {
+    font-family: 'TESTFONT';
+    src: url('http://www.fontsaddict.com/fontface/digital-7-mono.ttf') format("tff");
+  }
 
-};
+
+#body {
+    background-image: url("https://www.designyourway.net/blog/wp-content/uploads/2018/09/wood-_texture1584-1250x834.jpg");
+}
+
+#Bumper{
+    position: relative;
+    margin:auto;
+    width: 415px;
+    height: 580px;
+    background-color: #e3e1c3;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 1.5% / 7%;
+
+
+}
+
+    #Calculator {
+        margin: 0 auto;
+        background-color: #4a6b7e;
+        height:544px;
+        width: 400px;
+        border-radius: 10px;
+        position: absolute;
+        padding-top:56px;
+        padding-bottom: 0px;
+        left: 7.5px;
+        bottom: -9px;
+        
+    }
+
+        #ViewScreen {
+            margin: 0 auto;
+            background-color: #345773;
+            border-radius: 32px;
+            height: 240px;
+            width: 360px;
+            padding-top: 25px;
+            box-shadow: inset 4px 3px 8px 6px #242720;
+        }
+        
+            #Display {
+                background-color:#242720;
+                width: auto;
+                height: 135px;
+                margin-left: 23px;
+                margin-right: 23px;
+                margin-bottom: auto;
+                border-radius: 16px 16px 6px 6px;
+                padding-top: 26px;
+                box-shadow: inset 0px 1px 1px .5px #ffffff;
+            }
+                #NumDisplay{
+                    background-color: #1b5520;
+                    text-align: right;
+                    font-family:'TESTFONT';
+                    margin: auto;
+                    width: 260px;
+                    height: 35px;
+                    position: relative;
+                    color: #71fad5;
+                }
+                
+
+            #Logo{
+                width: auto;
+                height: 47px;
+                background-color: #f3f5e8;
+                margin: 8px 23px 0px 23px;
+                border-radius: 6px 6px 10px 10px;
+            }
+            
+
+        #ButtonPanel{
+            display: grid;
+            grid-template-columns: 49px 49px 49px 49px 49px ;
+            column-gap: 16.5px;
+            row-gap: 10px;
+            margin: 0 auto;
+            width: 310px;
+            height: 210px;
+            position: relative;
+            bottom: -40px;
+        }
+
+            .Key{
+                background-color:#f4f4db;
+                border-radius:10px;
+                border:3px solid #3f5363;
+                display:inline-block;
+                color:#54544a;
+                font-family:Verdana;
+                font-size: 20px;
+                font-weight:bold;
+            }
+            .Key:hover {
+                background-color:#f3f5e8;
+            }
+            .Key:active {
+                position:relative;
+            }
+
+            #C{
+                background-color: tomato;
+            }
+
+            #Spacer{
+                opacity: 0;
+            }
+        
+    
+
+
+
+    
+
+
