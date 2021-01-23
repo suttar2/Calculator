@@ -1,12 +1,10 @@
-@font-face {
-    font-family: 'TESTFONT';
-    src: url('http://www.fontsaddict.com/fontface/digital-7-mono.ttf') format("tff");
-  }
 
+body {
+    background-color: rgb(75, 49, 15);
+    background-image: url("https://cdn.shopify.com/s/files/1/1133/2862/products/20468382560_Darkwood-Plank-Runner-_25x60_720x.jpg?v=1571439201");
 
-#body {
-    background-image: url("https://www.designyourway.net/blog/wp-content/uploads/2018/09/wood-_texture1584-1250x834.jpg");
 }
+    
 
 #Bumper{
     position: relative;
