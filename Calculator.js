@@ -28,7 +28,8 @@ function commitLast(){ memory.push(displayVal.textContent) };
 //calculate function - takes an array with at least 3 items. and runs the operate function on it using the operator in array position 1 
 function calculate(arr){
     let result = operate(arr[1], parseInt(arr[0]), parseInt(arr[2]))
-    memory.splice( 0, 3 , result );
+    arr.splice( 0, 3 , result );
+    if (arr.length > 2) {calculate(arr)};
 };
 
     //maybe add the below later?
