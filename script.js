@@ -12,7 +12,7 @@ let operate = (operator, a, b ) => (operator(a,b));
 
 //set memory as an empty array to start
 let memory = [];
-
+let lastOperation = [];
 
 //functions 
 
@@ -27,9 +27,11 @@ function commitLast(){ memory.push(displayVal.textContent) };
 
 //calculate function - takes an array with at least 3 items. and runs the operate function on it using the operator in array position 1 
 function calculate(arr){
-    let result = operate(arr[1], parseInt(arr[0]), parseInt(arr[2]))
-    arr.splice( 0, 3 , result );
-    if (arr.length > 2) {calculate(arr)};
+    if (arr.length >= 3) {
+        let result = operate(arr[1], parseInt(arr[0]), parseInt(arr[2]))
+        arr.splice( 0, 3 , result );
+        if (arr.length > 2) {calculate(arr)};
+    };
 };
 
     //maybe add the below later?
@@ -42,6 +44,8 @@ function calculate(arr){
 let pressButton = ButtonPanel.addEventListener('click', function(btn) {
     //button pressed get's defined as the ID of the button being pressed. 
     let buttonPressed = btn.target.id;
+
+    if (memory.length >= 3){calculate(memory)};
 
     // if it's a number value our display will show it and if isn't empty, concat it
     if (buttonPressed >= 0 && buttonPressed <= 9) {
@@ -64,29 +68,30 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
         commitLast();
         clearScreen();
         memory.push(add);
-    };
+        calculate(memory);
 
-    //same as above
-    if (buttonPressed == "X"){
-        commitLast();
-        clearScreen();
-        memory.push(multiply);
     };
 
     //if equal is pressed, commit the displayVal to memory, Clear the screen, and then calculate the memory. 
     if(buttonPressed == "="){
+        if (memory.length > 1){
 
         commitLast();
-        clearScreen();
-        console.table(memory);
 
+        clearScreen();
+    
         calculate(memory);
        
         displayVal.textContent = memory[0];
 
-        console.log(memory)
+        clearMemory();
+
+        };
+        
+       
 
     };
+    console.log(memory);
 
 });
 
