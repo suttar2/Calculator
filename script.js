@@ -8,6 +8,7 @@ let add = (a,b) => (a + b);
 let subtract = (a,b) => (a - b);
 let multiply = (a,b) => (a * b);
 let divide = (a,b) => (a / b);
+let modulus = (a,b) => (a % b);
 let operate = (operator, a, b ) => (operator(a,b));
 
 //set memory as an empty array to start
@@ -24,6 +25,13 @@ function clearMemory(){ memory = [] };
 
 //pushes the information on the display into the memory
 function commitLast(){ memory.push(displayVal.textContent) };
+
+function doOperator(func){
+    commitLast();
+    clearScreen();
+    memory.push(func);
+    calculate(memory);
+};
 
 //calculate function - takes an array with at least 3 items. and runs the operate function on it using the operator in array position 1 
 function calculate(arr){
@@ -63,14 +71,12 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
     };
 
     //if it's adding, commit the value in displayval to memory commit the add function to memory, and then clear the screen
-    //use this as model for all other operations once working
-    if (buttonPressed == "+") {
-        commitLast();
-        clearScreen();
-        memory.push(add);
-        calculate(memory);
-
-    };
+    //use this as model for all other operations once working - did that. it works
+    if (buttonPressed == "+") {doOperator(add)};
+    if (buttonPressed == "-") {doOperator(subtract)};
+    if (buttonPressed == "X") {doOperator(multiply)};
+    if (buttonPressed == "/") {doOperator(divide)};
+    if (buttonPressed == "%") {doOperator(modulus)};
 
     //if equal is pressed, commit the displayVal to memory, Clear the screen, and then calculate the memory. 
     if(buttonPressed == "="){
@@ -91,7 +97,6 @@ let pressButton = ButtonPanel.addEventListener('click', function(btn) {
        
 
     };
-    console.log(memory);
 
 });
 
