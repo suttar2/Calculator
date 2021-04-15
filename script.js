@@ -11,8 +11,8 @@ const modulus = (a,b) => (a % b);
 const operate = (operator, a, b ) => (operator(a,b));
 
 //set memory as an empty array to start
-const memory = [];
-const lastOperation = [];
+let memory = [];
+let lastOperation = [];
 
 //clears screen turning display to null
 function clearScreen(){ displayVal.textContent = null};
