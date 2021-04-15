@@ -1,21 +1,18 @@
-//listen on the button panel 
-//listen on the display
-let ButtonPanel = document.getElementById('ButtonPanel');
-let displayVal = document.getElementById("NumDisplay");
+//listen on the button panel and listen on the display
+const ButtonPanel = document.getElementById('ButtonPanel');
+const displayVal = document.getElementById("NumDisplay");
 
 //functions that add, subtract, multiply divide, and operate
-let add = (a,b) => (a + b);
-let subtract = (a,b) => (a - b);
-let multiply = (a,b) => (a * b);
-let divide = (a,b) => (a / b);
-let modulus = (a,b) => (a % b);
-let operate = (operator, a, b ) => (operator(a,b));
+const add = (a,b) => (a + b);
+const subtract = (a,b) => (a - b);
+const multiply = (a,b) => (a * b);
+const divide = (a,b) => (a / b);
+const modulus = (a,b) => (a % b);
+const operate = (operator, a, b ) => (operator(a,b));
 
 //set memory as an empty array to start
-let memory = [];
-let lastOperation = [];
-
-//functions 
+const memory = [];
+const lastOperation = [];
 
 //clears screen turning display to null
 function clearScreen(){ displayVal.textContent = null};
